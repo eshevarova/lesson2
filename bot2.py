@@ -1,7 +1,8 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 from api_key import key
 
-import ephem, logging
+import ephem
+import logging
 import datetime as dt
 
 logging.basicConfig(format='%(name)s - %(levelname)s - %(message)s',

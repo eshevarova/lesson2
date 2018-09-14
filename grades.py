@@ -4,9 +4,14 @@ classes_scores = [{'school_class': '4a', 'scores': [3, 4, 4, 5, 2]},
 
 
 def average_scores(school):
+    sum_grades = 0
+    number_of_grades = 0
 
-    average_grades = [sum(elem['scores']) / len(elem['scores']) for elem in classes_scores]
-    average_school = sum(average_grades) / len(average_grades)
+    for elem in classes_scores:
+        sum_grades += sum(elem['scores'])
+        number_of_grades += len(elem['scores'])
+
+    average_school = sum_grades / number_of_grades
     print('Средний балл по школе равен {}'.format(average_school))
     for elem in school:
         print('Средний балл в классе {} равен {}'.format(elem['school_class'],

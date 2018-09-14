@@ -3,18 +3,18 @@ answers_dict = {'Как дела?': 'Прекрасно!', 'Что делаеш�
 
 
 def ask_user():
-    while True:
-        try:
+    try:
+        while True:
             answer = input('Что надо?\n')
-        except KeyboardInterrupt:
-            print('Пока!')
-            break
-        if answer == 'Прощай':
-            break
-        if answer in answers_dict.keys():
-            print(answers_dict[answer])
-        else:
-            print('Не понимаю теееееебя')
+            if answer == 'Прощай':
+                break
+            if answer in answers_dict.keys():
+                print(answers_dict[answer])
+            else:
+                print('Не понимаю теееееебя')
+    except KeyboardInterrupt:
+        print('Пока!')
+        #break
 
 
 ask_user()
